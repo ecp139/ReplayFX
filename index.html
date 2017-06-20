@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title></title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/replayfx.css" type="text/css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="backgroundImage">
+      <img src="/bg_images/Mario.png" />
+      <img src="/bg_images/press_start.jpg" />
+    </div>
+    <div class="container">
+    <div class="main_body">
+      <div class="now panel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=3000>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active mainSection">
+              <div class="happening">
+                <h3>Now Happening</h3>
+
+              </div>
+            </div>
+            <div class="item mainSection">
+              <div class="featured">
+                <h3>Featured Events</h3>
+              </div>
+            </div>
+            <div class="item mainSection">
+              <div class="leaderBoard">
+                <h3>Leader Board</h3>
+              </div>
+            </div>
+            <div class="item mainSection announcementItem">
+              <div class="announcement">
+                <h3>Announcements</h3>
+              </div>
+            </div>
+          </div><!--END OF CAROUSEL-->
+        </div>
+      </div>
+      <div class="lower_left panel">
+        <div class="fake_twitch">
+          <video autoplay control class=" video">
+            <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+      <div class="lower_right panel">
+        <div class="twitwrapper">
+          <div id="tweetCarousel" class="carousel slide" data-ride="carousel" data-interval=10000>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" id="socialFeed">
+    </div></div>
+    </div><!--end twitwrapper-->
+        </div><!-- end twitter panel!-->
+      </div>
+
+    <div class="schedule_panel panel">
+      <h3>Upcoming Events</h3>
+      <div class="schedule marquee">
+        <div class="scroll ">
+          <div class="list ">
+          </div>
+      </div>
+      </div>
+    </div>
+  <!-- </div> -->
+  <button id="close_me" class="close_button" >Close!</button>
+
+  <script src="js/twitterfeed.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/ral.min.js"></script>
+  <script src="js/replayfx.js"></script>
+  <script src="js/getSchedule.js"></script>
+  <script src="js/jQuery.Marquee-master/jquery.marquee.min.js"></script>
+  <script src="js/slick-1.6.0/slick/slick.min.js"></script>
+  </body>
+</html>

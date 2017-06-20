@@ -1,0 +1,14 @@
+{
+  "name": "ReplayFX",
+  "description": "Main schedule page for ReplayFX",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["/js/background.js"]
+    }
+  },
+
+  "kiosk_enabled" : true,
+  "permissions": ["<all_urls>"]
+}

@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Twitter Feed</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.rawgit.com/rogeriopvl/8bit/master/8bit.js"></script>
+    <style>
+    .thumbnail:hover {
+        position:relative;
+        top:-25px;
+        left:-35px;
+        width:500px;
+        height:auto;
+        display:block;
+        z-index:999;
+    }
+    </style>
+</head>
+<body>
+
+
+  <div class="container">
+    <h1>Social Feed Admin Page</h1>
+    <h4>Hover Over Images to Expand</h4>
+    <table class="table table-hover" style="border: solid" id="socialFeed">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Username</th>
+        <th>Avatar</th>
+        <th>Text</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody><ul>
+<!--this is where the rows will populate with my jQuery-->
+  </ul></tbody>
+</table>
+</div>
+
+
+
+<script>
+$.ajax({
+  type: 'GET',
+  url: 'https://api.mongolab.com/api/1/databases/replaytweets/collections/fxtweets',
+  contentType: 'application/json',
+  data: {
+    // Query string data from the url goes here (the part after the question mark ? in a url)
+    'apiKey': 'GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH'
+  },
+  success: function(tweets_data) {
+    for(i = 0; i < tweets_data.length; i++){
+      //console.log(tweets_data[i]._id.$oid);
+      // Selects tbody elements that are the direct descendant of #socialFeed.
+      $('#socialFeed > tbody').append('<tr>'
+          +'<td>'+tweets_data[i].postDT+'</td>'
+          +'<td>'+tweets_data[i].userName+'</td>'
+          +'<td><img src="'+tweets_data[i].userImage+'"></td>'
+          +'<td>'+tweets_data[i].tweetText+'</td>'
+          +'<td><img width = "100"px" height: "100" class="thumbnail" src="'+tweets_data[i].tweetImage+'"</td>'
+        +'<td><input type="button" id="'+tweets_data[i]._id.$oid+'" class="btn btn-danger tester" value="Delete"></td></tr>');
+             }
+  },
+  error: function(request, errorType, errorMessage) {
+    console.log("ERROR: " + errorMessage);
+  }
+});
+
+$('#socialFeed').on('click', '.tester', function() {
+alert("DELETED! The page will now refresh.");
+$.ajax({
+  type: "DELETE",
+  url: "https://api.mongolab.com/api/1/databases/replaytweets/collections/fxtweets/"+ $( this ).attr('id') +"?apiKey=GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH",
+  contentType: "application/json",
+  success: function(result) {
+      console.log("DELETED!");
+      location.reload();
+      // still need to figure out how to pass parameter to delete tweet
+  },
+  error: function(request, errorType, errorMessage) {
+    console.log("ERROR: " + errorMessage);
+  }
+});
+});
+/*
+var img = new Image();
+img.onload = function () {
+  eightBit(document.getElementById('mycanvas'), img, `8`);
+};
+img.src = 'https://replayfx.org/wp-content/uploads/ReplayFX-Cosplay-2015-042.jpg';
+console.log(img)
+*/
+
+
+</script>
+</body>
+</html>

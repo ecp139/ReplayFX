@@ -1,0 +1,1 @@
+This is a kiosk style app running on a Chromebit.

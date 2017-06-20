@@ -1,0 +1,414 @@
+@font-face {
+  font-family: "OSD";
+  src:url("../Fonts/osd_mono.ttf");
+}
+@font-face {
+  font-family: "Dventure";
+  src:url("../Fonts/3Dventure.ttf");
+}
+@font-face {
+  font-family: "Wonder";
+  src:url("../Fonts/8-bit_wonder.TTF");
+}
+@font-face {
+  font-family: "PressStart";
+  src:url("../Fonts/PressStart2P.ttf");
+}
+.backgroundImage {
+  position:relative;
+  /*height:1080px;
+  width:1290px;*/
+  margin:0;
+  z-index: 0;
+}
+
+.backgroundImage img {
+  position:absolute;
+  left:0;
+  /*-webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;*/
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /*background: url("../bg_images/Mario.png");*/
+  background-color: #161617;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #dad8e3;
+  border-width: 0px;
+}
+
+/*.container {
+  border-style: solid;
+  border-color: red;
+  width: 100%;
+  height: 100%;
+}*/
+
+.panel {
+  /*border-style: solid;
+  border-color: red;*/
+  border-radius: 5px;
+  position: fixed;
+}
+
+.banner {
+  border-style: solid;
+  align-items: center;
+  position: static;
+  padding: 2px 4px;
+}
+
+.schedule_panel {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 660px;
+  height: 970px;
+  padding: 2px 2px;
+  background-color: rgba(0,0,0,0.7);
+  overflow: hidden;
+}
+
+.schedule_panel h3 {
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+  font-family: Wonder;
+  font-size: 50px;
+  color: #F46766;
+}
+
+.scroll {
+  height: 970px;
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.list {
+  /*border-style: solid;*/
+  padding: 5px 10px;
+  font-family: OSD;
+  font-size: 25px;
+  color: #4DB0F2;
+}
+
+.now h3 {
+  text-align: center;
+  margin: 2px;
+  padding: 2px;
+  font-family: Wonder;
+  color: #F46766;
+  font-size: 50px;
+}
+
+.main_body h3 {
+  text-align: center;
+  margin: 2px;
+  padding: 2px;
+  font-family: Wonder;
+  color: #F46766;
+  /*border-style: solid;
+  border-color: red;*/
+}
+
+.now {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 2px 4px;
+  width: 1210px;
+  height: 600px;
+  background-color: rgba(0,0,0,0.7);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.now div {
+  font-family: OSD;
+  font-size: 30px;
+  color: #4DB0F2;
+  padding: 5px 10px;
+}
+
+.lower_left {
+  display: inline-block;
+  position: fixed;
+  left: 10px;
+  top: 620px;
+  padding: 2px 4px;
+  margin: 2px 4px;
+  width: 600px;
+  height: 360px;
+  float: left;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.fake_twitch
+{
+  height: 5em;
+  /*background-color: gray;*/
+}
+
+.video {
+  /*min-height: 100%;
+  min-width: 100%;*/
+  height: 330px;
+  border-radius: 5px;
+}
+
+.lower_right {
+  display: inline-block;
+  position: fixed;
+  top: 620px;
+  left: 620px;
+  padding: 2px 4px;
+  width: 600px;
+  height: 360px;
+  float: right;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.lower_right#test{
+  float: left;
+  position: inherit;
+}
+
+.fake_twitter {
+  margin: 2px 4px;
+  height:5em;
+  background-color: teal;
+}
+
+@keyframes grow-animation
+{
+  0% {transform: scale(1);}
+  100% {transform: scale(1.2) translate(80px, -280px);}
+}
+
+.grow
+{
+  animation-name: grow-animation;
+  animation: grow-animation 3.5s forwards;  /* Keeps animation on screen indefinitely.  Will need to work on it more to involve a timer or an active/inactive status.  */
+}
+
+.grow_reverse /*not used yet, but can reverse animation. Same can be used for shrink.   */
+{
+  animation-direction: alternate;
+}
+
+@keyframes shrink-animation
+{
+  0% {transform: scale(1);}
+  100% {transform: scale(.45) translate(180px, 100px);}
+}
+
+.shrink
+{
+  animation-name: shrink-animation;
+  animation: shrink-animation 3.0s forwards;
+}
+
+.close_button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: black;
+}
+.event * {
+  font-size: 30px !important;
+  line-height:100% !important;
+}
+.event h2 {
+  font-size:35px;
+  color: #f46766;
+}
+
+.event div {
+  font-size: 30px;
+}
+
+.smallEvent h2 {
+  font-size:40px;
+  margin-bottom:5px;
+  margin-top:2px;
+  line-height: :100%;
+  color: #f46766;
+}
+
+.smallEvent span {
+  font-size: 35px;
+}
+
+.smallEvent div {
+  font-size: 30px;
+}
+
+.tweet-img img{
+  height: 250px;
+  width: 100%;
+  border-top: dashed;
+  border-bottom: dashed;
+  background-color: #FFBAAA;
+}
+
+
+.avatar-img{
+  width: 100%;
+  max-height: 70px;
+  padding:0px;
+  border: solid;
+}
+
+.tlogo{
+  max-height: 35px;
+  float: right;
+}
+
+p.name{
+font-family: PressStart;
+font-size: 19px;
+margin: 0px;
+margin-top: 10px;
+padding-left: 20px;
+transform : scale(0.9,1.5);
+}
+
+p.handle{
+  font-family: PressStart;
+  padding-left: 40px;
+  font-size: 21px;
+  margin: 10px 0px 0px 0px;
+  color: #DBFCFF;
+  transform : scale(1,1.25);
+}
+
+.twext{
+  margin: 5px 10px 10px 10px;
+  height: 30px;
+}
+
+p.twext{
+  font-family: OSD;
+  font-size: 14px;
+  color: #DBFCFF;
+}
+
+.tweet-container {
+  line-height: normal;
+  max-width: 600px;
+  max-height: 360px;
+  padding: 0px 40px;
+}
+
+.tweet-container2 {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 360px;
+  background-color: #5D94FB;
+}
+
+.section{
+width: 100%;
+height: auto;
+float: left;
+border: 10px solid #CC4B09;
+position: relative;
+}
+.section_content{
+display: block;
+padding: 0px;
+overflow: hidden;
+}
+.corner{
+width: 15px;
+position: absolute;
+z-index: 9;
+
+}
+.tl{
+top: -10px;
+left: -10px;
+}
+.tr{
+top: -10px;
+right: -10px;
+}
+.bl{
+bottom: -10px;
+left: -10px;
+}
+.br{
+bottom: -10px;
+right: -10px;
+}
+.corner .a{
+width: 5px;
+height: 10px;
+float: left;
+display: block;
+background-color: #161617;
+}
+.corner .b{
+width: 5px;
+height: 5px;
+float: left;
+display: block;
+background-color: #161617;
+}
+.corner .c{
+width: 10px;
+height: 10px;
+float: left;
+display: block;
+background: #FF6600;
+}
+.tr .a, .tr .b,
+.tr .c, .br .a,
+.br .b, .br .c{
+float: right;
+}
+.bl .a,
+.br .a{
+border-top: 5px solid #CC4B09;
+}
+
+.row.small{
+  height: 15px
+}
+
+.white{
+  background-color: white;
+  border: solid;
+}
+
+.green{
+  background-color: #127C22;
+}
+
+
+.blue{
+  background-color: #5D94FB;
+}
+
+.twitwrapper{
+  display: inline-block;
+  width: 600px;
+}
+
+.PrettyLink{
+  color: #DBFCFF;
+}
+
+.Link{
+  color: #DBFCFF;
+}
+.itemHidden {
+  display:none;
+}
